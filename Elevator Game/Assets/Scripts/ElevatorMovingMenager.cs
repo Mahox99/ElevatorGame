@@ -10,8 +10,16 @@ public class ElevatorMovingMenager : MonoBehaviour
     float moveSpeed = 1.5f;
     public float error_permissible = 0.1f;
     bool moveToFloor = false;
+    [SerializeField] private Animator doorAnim;
 
- 
+
+    private void Start()
+    {
+        ElevatorControler.target = elevator;
+        //it just prevents from errors
+    }
+
+
     void Update()
     {
         if(moveToFloor == true)
@@ -22,10 +30,13 @@ public class ElevatorMovingMenager : MonoBehaviour
         }
 
 
-        if (Vector3.Distance(ElevatorControler.target.transform.position, elevator.transform.position) < error_permissible)
+        if ((Vector3.Distance(ElevatorControler.target.transform.position, elevator.transform.position) < error_permissible) && (moveToFloor == true))
         {
             Debug.Log("Winda powinna sie zatrzymac");
             moveToFloor = false;
+            ElevatorControler.activeDoor = true;
+                               
+
         }
     }
     private void OnMouseDown()
@@ -34,6 +45,5 @@ public class ElevatorMovingMenager : MonoBehaviour
         moveToFloor = true;
         ElevatorControler.target = floorPointer;
     }
-
 
 }
