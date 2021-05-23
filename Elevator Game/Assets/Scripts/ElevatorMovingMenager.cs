@@ -5,13 +5,11 @@ using UnityEngine;
 public class ElevatorMovingMenager : MonoBehaviour
 {
     public GameObject elevator;
-    //public GameObject elevtorSensor;
     public GameObject floorPointer;
     float moveSpeed = 1.5f;
     public float error_permissible = 0.1f;
     bool moveToFloor = false;
-    [SerializeField] private Animator doorAnim;
-
+    [SerializeField] private Animator clickAnim;
 
     private void Start()
     {
@@ -41,9 +39,9 @@ public class ElevatorMovingMenager : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        clickAnim.SetTrigger("Click");
         Debug.Log("kliknieto w guziczek");
         moveToFloor = true;
         ElevatorControler.target = floorPointer;
     }
-
 }

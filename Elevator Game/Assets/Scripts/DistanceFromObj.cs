@@ -10,7 +10,7 @@ public class DistanceFromObj : MonoBehaviour
     void Update()
     {
         RaycastHit Hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Hit)) ;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Hit))
         {
             ToTarget = Hit.distance;
             DistanceFromTarget = Hit.distance;
