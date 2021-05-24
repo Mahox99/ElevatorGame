@@ -13,25 +13,4 @@ public class ElevatorControler : MonoBehaviour
 
     [SerializeField] private Animator doorAnim;
     [SerializeField] private static Animator doorAnimSt;
-    
-
-
-
-    private void Start()
-    {
-
-        
-    }
-    //private void Update()
-    //{
-    //    if (isMoving == true)
-    //    {
-    //        InvokeRepeating("PlaySounds", 1, 3f);
-    //    }
-    //}
-    //public void PlaySounds()
-    //{
-    //    sounds[Random.Range(0, 4)].Play();
-    //}
-   
 }

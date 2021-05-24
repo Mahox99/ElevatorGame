@@ -8,18 +8,14 @@ public class SensorScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Czujnik aktywny!");
             ElevatorControler.sensorIsActive = true;
-        
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Czujnik wylaczony!");
             ElevatorControler.sensorIsActive = false;
-         
         }
     }
 }
