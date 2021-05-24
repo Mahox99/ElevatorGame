@@ -10,6 +10,7 @@ public class SensorScript : MonoBehaviour
         {
             Debug.Log("Czujnik aktywny!");
             ElevatorControler.sensorIsActive = true;
+        
         }
     }
     private void OnTriggerExit(Collider other)
@@ -18,6 +19,7 @@ public class SensorScript : MonoBehaviour
         {
             Debug.Log("Czujnik wylaczony!");
             ElevatorControler.sensorIsActive = false;
+         
         }
     }
 }
